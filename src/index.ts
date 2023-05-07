@@ -28,6 +28,10 @@ export default {
 		env: Env,
 		ctx: ExecutionContext
 	): Promise<Response> {
-		return new Response("Hello World!");
+		return new Response("served from a worker", {
+			headers: {
+				"Content-Type": "text/plain"
+			}
+		});
 	},
 };
